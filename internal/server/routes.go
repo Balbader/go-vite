@@ -21,14 +21,19 @@ func (s *Server) RegisterRoutes() http.Handler {
 
 	// Configure CORS middleware to handle cross-origin requests
 	r.Use(cors.Handler(cors.Options{
+
 		// Allow requests from any HTTPS and HTTP origin
 		AllowedOrigins: []string{"https://*", "http://*"},
+
 		// Allow standard HTTP methods
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"},
+
 		// Allow common HTTP headers
 		AllowedHeaders: []string{"Accept", "Authorization", "Content-Type"},
+
 		// Allow requests to include credentials (cookies, HTTP authentication)
 		AllowCredentials: true,
+
 		// Cache preflight requests for 300 seconds
 		MaxAge: 300,
 	}))
