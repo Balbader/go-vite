@@ -52,7 +52,7 @@ func (s *Server) RegisterRoutes() http.Handler {
 func (s *Server) HelloWorldHandler(w http.ResponseWriter, r *http.Request) {
 	// Create a map for the response message
 	resp := make(map[string]string)
-	resp["message"] = "Hello World"
+	resp["message"] = "Hello from Go backend"
 
 	// Convert the response to JSON
 	jsonResp, err := json.Marshal(resp)
